@@ -7,7 +7,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import logo from "./../../assets/images/logo.png";
 function Header() {
   return (
-    <>
+   
       <div className={styles.header_contaner}>
         {/* left container */}
         <div className={styles.header_contaner_left}>
@@ -30,7 +30,6 @@ function Header() {
           <IoMdArrowDropdown />
         </div>
       </div>
-    </>
   );
 }
 
