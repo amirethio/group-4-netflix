@@ -15,7 +15,9 @@ function Row({ title, fetchUrl, isSmall }) {
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
-      movietrailer(movie?.title + "trailer" || movie?.name || movie?.original_name || "")
+      movietrailer(
+       movie?.title || movie?.name || movie?.original_name || ""
+      )
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
           console.log(urlParams.get("v"));
@@ -55,10 +57,7 @@ function Row({ title, fetchUrl, isSmall }) {
         ))}
       </div>
       <div className={styles.YouTube}>
-        {
-          trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />
-        }
-        
+        {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
       </div>
     </div>
   );
